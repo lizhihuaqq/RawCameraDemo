@@ -1,0 +1,606 @@
+<?xml version="1.0" encoding="utf-8"?>
+<LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    android:layout_marginTop="20dp"
+    android:background="@color/white"
+    android:orientation="vertical">
+
+    <LinearLayout
+        android:layout_width="match_parent"
+        android:layout_height="60dp"
+        android:layout_marginTop="20dp"
+        android:orientation="horizontal"
+        android:visibility="gone">
+
+        <RelativeLayout
+            android:id="@+id/prefs_frame"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:orientation="horizontal"
+            android:visibility="visible"></RelativeLayout>
+    </LinearLayout>
+
+    <LinearLayout
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:layout_marginTop="20dp"
+        android:orientation="horizontal"
+        android:visibility="gone">
+
+        <Button
+            android:id="@+id/bt_select_save_path"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_gravity="center_horizontal"
+            android:text="选择图片存储路径"
+            android:textSize="15sp"
+            android:visibility="visible" />
+
+        <TextView
+            android:id="@+id/tv_save_path"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_marginTop="20dp"
+            android:gravity="center_vertical"
+            android:hint="参考图路径"
+            android:textSize="15sp" />
+    </LinearLayout>
+
+    <LinearLayout
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:layout_marginTop="20dp"
+        android:orientation="horizontal"
+        android:visibility="gone">
+
+        <Button
+            android:id="@+id/bt_select_ref"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_gravity="center_horizontal"
+            android:text="选择参考图"
+            android:textSize="15sp"
+            android:visibility="gone" />
+
+        <TextView
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:gravity="center_vertical"
+            android:hint="参考图路径："
+            android:textSize="15sp" />
+
+        <TextView
+            android:id="@+id/tv_ref_path"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:gravity="center_vertical"
+            android:hint="参考图路径"
+            android:textSize="15sp" />
+    </LinearLayout>
+
+    <LinearLayout
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_marginTop="20dp"
+        android:orientation="horizontal">
+        <!--android:layout_marginLeft="20dp"-->
+
+
+        <TextView
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_gravity="center_vertical"
+            android:text="设置分辨率：VGA"
+            android:textSize="15sp"
+            android:visibility="gone" />
+
+        <RadioGroup
+            android:id="@+id/mRadioGroup"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:orientation="horizontal"
+            android:visibility="gone">
+
+            <RadioButton
+                android:id="@+id/rb_16"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:checked="true"
+                android:text="16"
+                android:textSize="15sp"
+                android:visibility="gone" />
+
+            <RadioButton
+                android:id="@+id/rb_32"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:checked="true"
+                android:text="32"
+                android:textSize="15sp"
+                android:visibility="gone" />
+
+            <RadioButton
+                android:id="@+id/rb_1"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:text="VGA"
+                android:textSize="15sp" />
+
+            <RadioButton
+                android:id="@+id/rb_0"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:checked="true"
+                android:text="ROI"
+                android:textSize="15sp" />
+
+
+            <RadioButton
+                android:id="@+id/rb_64"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:text="64"
+                android:textSize="15sp" />
+
+            <RadioButton
+                android:id="@+id/rb_128"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:text="128"
+                android:textSize="15sp" />
+
+            <RadioButton
+                android:id="@+id/rb_512"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:text="512"
+                android:textSize="15sp" />
+        </RadioGroup>
+    </LinearLayout>
+
+    <LinearLayout
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_marginTop="20dp"
+        android:orientation="vertical"
+        android:visibility="gone">
+
+        <TextView
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_gravity="center_vertical"
+            android:text="结构光：峰值电流400mA,电流占空比15%"
+            android:textSize="15sp" />
+
+        <TextView
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_gravity="center_vertical"
+            android:layout_marginTop="20dp"
+            android:text="泛光：峰值电流350mA,电流占空比15%"
+            android:textSize="15sp"
+            android:visibility="gone" />
+    </LinearLayout>
+
+    <LinearLayout
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_marginTop="20dp"
+        android:orientation="horizontal"
+        android:visibility="visible">
+
+        <RadioGroup
+            android:id="@+id/mLightRadioGroup"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:orientation="horizontal"
+            android:visibility="visible">
+
+            <RadioButton
+                android:id="@+id/rb_jgg"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:checked="true"
+                android:text="结构光"
+                android:textSize="10sp"
+                android:visibility="visible" />
+
+            <RadioButton
+                android:id="@+id/rb_fg"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:checked="true"
+                android:text="泛光"
+                android:textSize="10sp"
+                android:visibility="visible" />
+        </RadioGroup>
+
+
+        <TextView
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_marginLeft="5dp"
+            android:text="峰值电流："
+            android:textSize="12sp" />
+
+        <EditText
+            android:id="@+id/et_value"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:hint="0-400"
+            android:inputType="number"
+            android:textSize="10sp"
+            android:visibility="visible" />
+
+        <EditText
+            android:id="@+id/et_value_jgg"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:hint="0-400"
+            android:inputType="number"
+            android:textSize="10sp"
+            android:visibility="gone" />
+
+
+        <TextView
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_marginLeft="5dp"
+            android:text="电流占空比："
+            android:textSize="12sp" />
+
+        <EditText
+            android:id="@+id/et_pwm"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:hint="0-100"
+            android:inputType="number"
+            android:textSize="10sp" />
+
+        <EditText
+            android:id="@+id/et_pwm_jgg"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:hint="0-100"
+            android:inputType="number"
+            android:textSize="10sp"
+            android:visibility="gone" />
+
+
+        <Button
+            android:id="@+id/btn_light_setting"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_gravity="center"
+            android:layout_marginLeft="5dp"
+            android:text="设置"
+            android:textSize="10sp" />
+
+        <Button
+            android:id="@+id/jgg_btn"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_gravity="center"
+            android:layout_marginLeft="5dp"
+            android:text="设置"
+            android:textSize="10sp"
+            android:visibility="gone" />
+    </LinearLayout>
+
+    <LinearLayout
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:orientation="horizontal"
+        android:visibility="gone">
+
+        <LinearLayout
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_gravity="center"
+            android:orientation="horizontal">
+
+            <TextView
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_marginLeft="20dp"
+                android:text="峰值电流："
+                android:textSize="15sp" />
+
+            <EditText
+                android:id="@+id/et_value_fg"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:hint="0-350"
+                android:inputType="number"
+                android:textSize="15sp" />
+        </LinearLayout>
+
+        <LinearLayout
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_gravity="center"
+
+            android:orientation="horizontal">
+
+            <TextView
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_marginLeft="10dp"
+                android:text="电流占空比："
+                android:textSize="15sp" />
+
+            <EditText
+                android:id="@+id/et_pwm_fg"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:hint="0-100"
+                android:inputType="number"
+                android:textSize="15sp" />
+        </LinearLayout>
+
+        <Button
+            android:id="@+id/fg_btn"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_gravity="center_vertical"
+            android:layout_marginLeft="10dp"
+            android:layout_marginTop="5dp"
+            android:text="设置泛光"
+            android:textSize="15sp" />
+    </LinearLayout>
+
+    <LinearLayout
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_marginTop="20dp"
+        android:orientation="horizontal"
+        android:visibility="gone">
+        <!--android:layout_marginLeft="20dp"-->
+
+        <TextView
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_gravity="center_vertical"
+            android:text="ISO值："
+            android:textSize="15sp" />
+
+        <RadioGroup
+            android:id="@+id/rg_iso"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:orientation="horizontal"
+            android:visibility="visible">
+
+            <RadioButton
+                android:id="@+id/rb_auto"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:checked="true"
+                android:text="Auto"
+                android:textSize="12sp"
+                android:visibility="visible" />
+
+            <RadioButton
+                android:id="@+id/rb_iso_100"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:checked="true"
+                android:text="100"
+                android:textSize="15sp"
+                android:visibility="gone" />
+
+            <RadioButton
+                android:id="@+id/rb_iso_200"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:checked="true"
+                android:text="200"
+                android:textSize="12sp"
+                android:visibility="visible" />
+
+            <RadioButton
+                android:id="@+id/rb_iso_400"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:checked="true"
+                android:text="400"
+                android:textSize="12sp"
+                android:visibility="visible" />
+
+            <RadioButton
+                android:id="@+id/rb_iso_800"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:checked="true"
+                android:text="800"
+                android:textSize="12sp"
+                android:visibility="visible" />
+
+            <RadioButton
+                android:id="@+id/rb_iso_1600"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:checked="true"
+                android:text="1600"
+                android:textSize="12sp"
+                android:visibility="visible" />
+
+            <RadioButton
+                android:id="@+id/rb_iso_3200"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:checked="true"
+                android:text="3200"
+                android:textSize="12sp"
+                android:visibility="gone" />
+
+        </RadioGroup>
+    </LinearLayout>
+
+    <LinearLayout
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_marginTop="20dp"
+        android:orientation="horizontal"
+        android:visibility="visible">
+
+        <TextView
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:text="显示深度范围，距均值± 10 cm"
+            android:visibility="gone" />
+
+        <EditText
+            android:id="@+id/et_colormapParams_range"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:hint="2-40"
+            android:inputType="number"
+            android:textSize="15sp"
+            android:visibility="gone" />
+    </LinearLayout>
+
+    <LinearLayout
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_marginTop="20dp"
+        android:orientation="horizontal"
+        android:visibility="visible">
+
+        <TextView
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:text="曝光:" />
+
+        <EditText
+            android:id="@+id/et_exposure"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:hint="-12-12"
+            android:inputType="numberSigned"
+            android:textSize="15sp" />
+    </LinearLayout>
+    <LinearLayout
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_marginTop="20dp"
+        android:orientation="horizontal"
+        android:visibility="visible">
+        <TextView
+            android:gravity="center_vertical"
+            android:layout_gravity="center_vertical"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:text="配准:" />
+        <RadioGroup
+            android:id="@+id/mRadioGroup111"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:orientation="horizontal"
+            android:textSize="15sp"
+            android:visibility="visible">
+
+        <RadioButton
+            android:id="@+id/rb_false"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:checked="true"
+            android:text="false"
+            android:textSize="15sp"
+            android:visibility="visible" />
+        <RadioButton
+            android:id="@+id/rb_true"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:checked="true"
+            android:text="true"
+            android:textSize="15sp"
+            android:visibility="visible" />
+        </RadioGroup>
+    </LinearLayout>
+    <LinearLayout
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_marginTop="20dp"
+        android:orientation="horizontal"
+        android:visibility="visible">
+
+        <TextView
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:text="亮度:" />
+
+        <EditText
+            android:id="@+id/et_bright"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:hint="-12-12"
+            android:inputType="numberSigned"
+            android:textSize="15sp" />
+    </LinearLayout>
+    <LinearLayout
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_marginTop="20dp"
+        android:orientation="horizontal"
+        android:visibility="visible">
+
+        <TextView
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:text="对比度:" />
+
+        <EditText
+            android:id="@+id/et_Contrast"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:hint="-12-12"
+            android:inputType="numberSigned"
+            android:textSize="15sp" />
+    </LinearLayout>
+
+    <LinearLayout
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_marginTop="20dp"
+        android:orientation="horizontal"
+        android:visibility="gone">
+
+        <TextView
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_gravity="center_vertical"
+            android:text="存储图片格式："
+            android:textSize="15sp" />
+
+        <RadioGroup
+            android:id="@+id/rg_save_format"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:orientation="horizontal"
+            android:visibility="visible">
+
+            <RadioButton
+                android:id="@+id/rb_raw"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:checked="true"
+                android:text="RAW_SENSOR"
+                android:textSize="12sp"
+                android:visibility="visible" />
+
+            <RadioButton
+                android:id="@+id/rb_jpg"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:checked="true"
+                android:text="JPEG"
+                android:textSize="15sp"
+                android:visibility="visible" />
+
+        </RadioGroup>
+    </LinearLayout>
+
+
+</LinearLayout>

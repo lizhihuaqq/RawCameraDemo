@@ -1,0 +1,199 @@
+<?xml version="1.0" encoding="utf-8"?>
+<RelativeLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent">
+
+    <LinearLayout
+        android:layout_width="match_parent"
+        android:layout_height="match_parent"
+        android:orientation="vertical">
+
+        <TextureView
+            android:id="@+id/textureviewRGB"
+            android:layout_width="match_parent"
+            android:layout_height="0dp"
+            android:layout_alignParentStart="true"
+            android:layout_centerHorizontal="true"
+            android:layout_weight="1"
+            android:rotationY="180" />
+        <!--    android:rotation="90"-->
+        <TextureView
+            android:id="@+id/textureviewIR"
+            android:layout_width="match_parent"
+            android:layout_height="0dp"
+            android:layout_alignParentStart="true"
+            android:layout_centerHorizontal="true"
+            android:layout_weight="1" />
+        <!--    android:rotation="90"-->
+    </LinearLayout>
+
+    <LinearLayout
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:layout_alignParentBottom="true"
+        android:layout_centerHorizontal="true"
+        android:layout_marginTop="5dp"
+        android:gravity="center_horizontal"
+        android:orientation="horizontal">
+
+        <LinearLayout
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_centerHorizontal="true"
+            android:orientation="horizontal"
+            android:visibility="gone">
+
+            <RadioGroup
+                android:id="@+id/mLightRadioGroup"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:orientation="horizontal"
+                android:visibility="visible">
+
+                <RadioButton
+                    android:id="@+id/rb_jgg"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:checked="true"
+                    android:text="结构光"
+                    android:textSize="10sp"
+                    android:visibility="visible" />
+
+                <RadioButton
+                    android:id="@+id/rb_fg"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:checked="true"
+                    android:text="泛光"
+                    android:textSize="10sp"
+                    android:visibility="visible" />
+            </RadioGroup>
+
+
+            <TextView
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_marginLeft="5dp"
+                android:text="峰值电流："
+                android:textSize="12sp" />
+
+            <EditText
+                android:id="@+id/et_value"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:hint="0-400"
+                android:inputType="number"
+                android:textSize="10sp"
+                android:visibility="visible" />
+
+            <EditText
+                android:id="@+id/et_value_jgg"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:hint="0-400"
+                android:inputType="number"
+                android:textSize="10sp"
+                android:visibility="gone" />
+
+
+            <TextView
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_marginLeft="5dp"
+                android:text="电流占空比："
+                android:textSize="12sp" />
+
+            <EditText
+                android:id="@+id/et_pwm"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:hint="0-100"
+                android:inputType="number"
+                android:textSize="10sp" />
+
+            <EditText
+                android:id="@+id/et_pwm_jgg"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:hint="0-100"
+                android:inputType="number"
+                android:textSize="10sp"
+                android:visibility="gone" />
+
+
+            <Button
+                android:id="@+id/btn_light_setting"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_gravity="center"
+                android:layout_marginLeft="5dp"
+                android:text="设置"
+                android:textSize="10sp" />
+
+            <Button
+                android:id="@+id/jgg_btn"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_gravity="center"
+                android:layout_marginLeft="5dp"
+                android:text="设置"
+                android:textSize="10sp"
+                android:visibility="gone" />
+        </LinearLayout>
+
+        <LinearLayout
+            android:layout_width="0dp"
+            android:layout_height="50dp"
+            android:layout_gravity="center"
+            android:gravity="center"
+            android:layout_weight="1">
+
+            <Button
+                android:id="@+id/setting"
+                android:layout_width="50dp"
+                android:layout_height="50dp"
+                android:layout_gravity="center"
+                android:background="@drawable/setting_icon"
+                android:visibility="visible" />
+        </LinearLayout>
+    <LinearLayout
+        android:layout_width="0dp"
+        android:layout_height="match_parent"
+        android:layout_gravity="center"
+        android:gravity="center"
+        android:orientation="horizontal"
+        android:layout_weight="1">
+        <Button
+            android:id="@+id/photoButton"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_gravity="center_horizontal"
+            android:layout_marginTop="5dp"
+            android:text="开始采集" />
+    </LinearLayout>
+
+    <LinearLayout
+        android:layout_width="0dp"
+        android:layout_height="match_parent"
+        android:layout_gravity="center"
+        android:gravity="center"
+        android:orientation="horizontal"
+        android:visibility="visible"
+        android:layout_weight="1">
+        <TextView
+            android:layout_width="wrap_content"
+            android:layout_height="match_parent"
+            android:textColor="@color/white"
+            android:gravity="center"
+            android:text="已采集张数：" />
+        <TextView
+            android:id="@+id/tv_count"
+            android:layout_width="wrap_content"
+            android:layout_height="match_parent"
+            android:textColor="@color/white"
+            android:gravity="center"
+            android:text="" />
+
+    </LinearLayout>
+    </LinearLayout>
+</RelativeLayout>
